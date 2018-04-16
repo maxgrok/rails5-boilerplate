@@ -1,20 +1,20 @@
 # Rails5 Boilerplate
 
-This is starter application template for Ruby on Rails 5.
+This is starter application template for Ruby on Rails 5.2 - upgraded from the following:
 
 ![Rails5 Boilerplate Top Page](https://raw.githubusercontent.com/takp/rails5-boilerplate/master/app/assets/images/rails5-top-page.png "Rails5 Boilerplate")
 
 ## Versions
 
-- Rails 5.1.5
+- Rails 5.2.0
 
 ## Features
 
 - [Ruby on Rails](http://rubyonrails.org/)
-- [Twitter Bootstrap 3](https://github.com/twbs/bootstrap-sass)
+- [SQLite3](https://sqlite.org/index.html)
+- [Bootstrap 4.1.0](https://rubygems.org/gems/bootstrap)
 - [FontAwesome](https://github.com/FortAwesome/font-awesome-sass)
 - [Slim Template Engine](http://slim-lang.com/)
-- MySQL
 - [Rspec](https://github.com/rspec/rspec-rails)
 - [Devise](https://github.com/plataformatec/devise)
 - [ActiveDecorator](https://github.com/amatsuda/active_decorator)
@@ -32,14 +32,17 @@ MVC + Service + Decorator
 ## Quick Start
 
 ```
-$ git clone git@github.com:takp/rails5-boilerplate.git
+$ git clone git@github.com:maxgrok/rails5-boilerplate.git
 $ cd rails5-boilerplate
 $ bundle install
 ```
+### Database 
+```
+$ rake db:create
+$ rake db:migrate
+```
 
 ### Configurations
-
-
 
 ```
 cp config/database.yml.sample config/database.yml
@@ -49,19 +52,11 @@ Input your database credentials into `config/database.yml` file.
 
 ```
 default: &default
-  adapter: mysql2
-  encoding: utf8
+  development: &default
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
-  username: YOUR_USERNAME
-  password: YOUR_PASSWORD
-  socket: /tmp/mysql.sock
-```
-
-### Database
-
-```
-$ bin/rake db:create
-$ bin/rake db:migrate
+  timeout: 5000
 ```
 
 ### Run
