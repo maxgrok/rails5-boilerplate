@@ -31,9 +31,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem "slim-rails"
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap', '~> 4.0.0'
 gem 'font-awesome-sass', '~> 4.6.2'
 
+gem 'sqlite3'
 gem 'devise'
 gem 'active_decorator'
 
@@ -41,7 +42,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
-  gem 'factory_girl_rails'
+  # gem 'factory_girl_rails'
+  gem 'factory_bot'
   gem 'faker'
   gem 'capybara'
   gem 'database_cleaner'
